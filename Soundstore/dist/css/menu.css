@@ -1,0 +1,194 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh; /* Ajusta la altura mínima al 100% del viewport */
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background-color: #4e657a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 100px; /* Se ajusta el tamaño del logo */
+    height: auto;
+}
+
+.nav-item button { /* Cambiado a botón */
+    margin: 10px 0; /* Ajusta el espacio alrededor del botón */
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    background-color: #000000; /* Color de fondo del botón */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.nav-item button:hover {
+    background-color: #1f7fd8; /* Cambia el color de fondo al pasar el cursor sobre el botón */
+}
+
+.menu {
+    background-color: white;
+    padding: 20px;
+    text-align: center; /* Centra el contenido del menú */
+    flex-grow: 1; /* Ajusta para que ocupe el espacio disponible */
+}
+
+.cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    text-align: center;
+    width: 250px;
+    height: 250px; /* Ajusta el ancho de las tarjetas */
+    margin-bottom: 20px;
+}
+.card h3 {
+    color: black; /* Color del texto */
+    text-decoration: none; /* Quitar subrayado */
+    cursor: default; /* Cambiar el cursor */
+}
+
+.card h3:hover {
+    color: black; /* Mantener el color del texto cuando se pasa el cursor sobre él */
+}
+
+.card img {
+    width: 90%; /* Ajusta el tamaño de las imágenes de las tarjetas */
+    height: auto;
+}
+
+.footer {
+    background-color: #4e657a;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    bottom: 0; /* Ajusta para que el footer esté pegado al fondo */
+    width: 100%; /* Ajusta el ancho para que ocupe toda la pantalla */
+}
+
+.container_users {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards_user {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card_user {
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column; /* Organiza los elementos en columnas */
+}
+
+.user-info {
+    display: flex;
+}
+
+.user-details {
+    flex-grow: 1;
+}
+
+.user-image {
+    margin-left: 20px;
+    flex-shrink: 0;
+}
+
+.actions_user {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Asegura que los botones se envuelvan si el espacio es insuficiente */
+}
+
+.actions_user a {
+    margin-right: 10px;
+    margin-bottom: 10px; /* Añade espacio entre los botones */
+}
+
+.boton_editar_user { /* Cambiado a botón */
+    
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    background-color: #147bce; /* Color de fondo del botón */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.boton_eliminar_user { /* Cambiado a botón */
+    
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+    background-color: #ce1414; /* Color de fondo del botón */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.table_ventas {
+    width: 80%; /* Reducir el ancho de la tabla */
+    margin: auto; /* Centrar horizontalmente la tabla */
+    margin-top: 50px; /* Agregar margen superior */
+    margin-bottom: 50px; /* Agregar margen inferior */
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+}
+
+.table_ventas th,
+.table_ventas td {
+    border: 1px solid black; /* Añade bordes a las celdas */
+    padding: 12px; /* Aumentar el espacio interior de las celdas */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.table_ventas th {
+    background-color: #1488d0; /* Color de fondo para las cabeceras */
+}
+
+
+/* CSS para la tabla de pedidos */
+.table_pedidos {
+    width: 80%; /* Reducir el ancho de la tabla */
+    margin: 20px auto; /* Centrar horizontalmente la tabla y agregar un poco de espacio superior e inferior */
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+}
+
+.table_pedidos th,
+.table_pedidos td {
+    border: 1px solid black; /* Añade bordes a las celdas */
+    padding: 12px; /* Aumentar el espacio interior de las celdas */
+}
+
+.table_pedidos th {
+    background-color: #1488d0; /* Color de fondo para las cabeceras */
+}
+
