@@ -1,0 +1,19 @@
+<IfModule authz_core_module>
+    Require all denied
+</IfModule>
+<IfModule !authz_core_module>
+    Deny from all
+</IfModule>
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /
+
+    # Permitir el acceso a la carpeta views/admin
+    <Directory "C:/xampp/htdocs/soundstore/views/admin">
+        Require all granted
+    </Directory>
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
