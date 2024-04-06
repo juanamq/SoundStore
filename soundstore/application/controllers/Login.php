@@ -9,12 +9,12 @@ class Login extends CI_Controller {
 
 	public function validarIngreso(){
 		$email = $this->input->post('campo_email');
-		$password = $this->input->post('campo_password');
+		$contrasena = $this->input->post('campo_password');
 
-		if ($email!="" && $password!="") {
+		if ($email!="" && $contrasena!="") {
 			$this->load->model('PersonasModel');
 			$this->load->model('UsuariosModel');
-			$validacion = $this->UsuariosModel->validarIngreso($email, $password);
+			$validacion = $this->UsuariosModel->validarIngreso($email, $contrasena);
 
 			if ($validacion) {
 				// EXTRAER LOS DATOS DE LA PERSONA Y USUARIO
@@ -49,7 +49,7 @@ class Login extends CI_Controller {
 		}else{
 			$data['errorInData'] = true;
 			$data['valueEmail'] = $email;
-			$data['valuePassword'] = $password;
+			$data['valuePassword'] = $contrasena;
 			$this->load->view('iniciar_session', $data);
 		}
 	}

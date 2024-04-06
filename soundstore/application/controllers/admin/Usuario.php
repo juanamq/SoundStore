@@ -31,10 +31,10 @@ class Usuario extends CI_Controller {
 		$telefono = $this->input->post('new_telefono');
 		$direccion = $this->input->post('new_direccion');
 		$correo = $this->input->post('new_correo');
-		$password = $this->input->post('new_password');
+		$contrasena = $this->input->post('new_password');
 		$tipo = $this->input->post('new_tipo');
 
-		if ($cedula!="" && $nombres!="" && $apellidos!="" && $telefono!="" && $direccion!="" && $correo!="" && $password!="" && $tipo!="") {
+		if ($cedula!="" && $nombres!="" && $apellidos!="" && $telefono!="" && $direccion!="" && $correo!="" && $contrasena!="" && $tipo!="") {
 			
 			$this->load->model('PersonasModel');
 			$this->load->model('UsuariosModel');
@@ -44,7 +44,7 @@ class Usuario extends CI_Controller {
 
 			if ($cedulaValida && $emailValido) {
 				$this->PersonasModel->insertar($cedula, $nombres, $apellidos, $telefono, $direccion, $correo);
-				$this->UsuariosModel->insertar($cedula, $correo, $password, $tipo);
+				$this->UsuariosModel->insertar($cedula, $correo, $contrasena, $tipo);
 				
 				$data['session'] = $this->session->userdata("session-mvc");
 				$data['date_validos'] = true;
@@ -71,10 +71,10 @@ class Usuario extends CI_Controller {
 		$telefono = $this->input->post('campo_telefono');
 		$direccion = $this->input->post('campo_direccion');
 		$correo = $this->input->post('campo_email');
-		$password = $this->input->post('campo_cedula');
+		$contrasena = $this->input->post('campo_cedula');
 		$tipo = $this->input->post('campo_tipo');
 		
-		if ($cedula!="" && $nombres!="" && $apellidos!="" && $telefono!="" && $direccion!="" && $correo!="" && $password!="" && $tipo!="") {
+		if ($cedula!="" && $nombres!="" && $apellidos!="" && $telefono!="" && $direccion!="" && $correo!="" && $contrasena!="" && $tipo!="") {
 			
 			$this->load->model('PersonasModel');
 			$this->load->model('UsuariosModel');
@@ -84,7 +84,7 @@ class Usuario extends CI_Controller {
 
 			if ($cedulaValida && $emailValido) {
 				$this->PersonasModel->insertar($cedula, $nombres, $apellidos, $telefono, $direccion, $correo);
-				$this->UsuariosModel->insertar($cedula, $correo, $password, $tipo);
+				$this->UsuariosModel->insertar($cedula, $correo, $contrasena, $tipo);
 				
 		     //Aca se retorna un Json
 			 $data=[

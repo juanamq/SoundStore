@@ -3,10 +3,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class UsuariosModel extends CI_Model {
 
-	public function validarIngreso($email, $password){
+	public function validarIngreso($email, $contrasena){
 		$this->db->select('cedula, email, tipo');
 		$this->db->where('email', $email);
-		$this->db->where('password', $password);
+		$this->db->where('contrasena', $contrasena);
 		$this->db->where('estado', 'ACTIVO');
 		$registros = $this->db->get('usuarios')->result();
 		// $registros = $this->db2->get('personas')->result();
@@ -30,11 +30,11 @@ class UsuariosModel extends CI_Model {
 		}
 	}
 
-	public function insertar($cedula, $correo, $password, $tipo){
+	public function insertar($cedula, $correo, $contrasena, $tipo){
 		$data = [
 					'cedula' => $cedula,
 					'email' => $correo,
-					'password' => md5($password),
+					'contrasena' => md5($contrasena),
 					'tipo' => $tipo,
 					'estado' => 'ACTIVO'
 				];
