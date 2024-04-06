@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-04-2024 a las 16:00:25
--- Versión del servidor: 10.4.27-MariaDB
--- Versión de PHP: 8.2.0
+-- Tiempo de generación: 07-04-2024 a las 01:22:15
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,9 +46,9 @@ CREATE TABLE `articulos_extras` (
 --
 
 INSERT INTO `articulos_extras` (`id_articulo`, `nombre`, `marca`, `stock`, `foto`, `tipo`, `color`, `modelo`, `precio`, `fecha_registro`, `estado`) VALUES
-(25, 'Pua', 'nice', 12, 'avatar5.png', 'Pua', 'roja', '2012', '200000.00', '2024-04-07 21:10:49', 'INACTIVO'),
-(27, 'parlante', 'yim', 10, 'ventas.jpg', 'Amplificador', 'naranja', '2008', '150000.00', '2024-04-08 13:36:29', 'INACTIVO'),
-(29, 'sonido', 'LG', 8, 'puas.png', 'Amplificador', 'azul', '2009', '1000.00', '0000-00-00 00:00:00', 'ACTIVO');
+(25, 'Pua', 'nice', 12, 'avatar5.png', 'Pua', 'roja', '2012', 200000.00, '2024-04-07 21:10:49', 'INACTIVO'),
+(27, 'parlante', 'yim', 10, 'ventas.jpg', 'Amplificador', 'naranja', '2008', 150000.00, '2024-04-08 13:36:29', 'INACTIVO'),
+(29, 'sonido', 'LG', 8, 'puas.png', 'Amplificador', 'azul', '2009', 1000.00, '0000-00-00 00:00:00', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -99,7 +99,7 @@ CREATE TABLE `historial_pedidos_ventas` (
 --
 
 INSERT INTO `historial_pedidos_ventas` (`id_pedido`, `id_instrumento`, `id_usuario`, `cliente`, `producto`, `direccion`, `cantidad`, `precio_total`, `fecha_pedido`, `estado`) VALUES
-(1, 1, 4, 'juan', 'guitarra', 'calle 10', 2, '900000.00', '2024-03-31 19:01:15', 'ACTIVO');
+(1, 1, 4, 'juan', 'guitarra', 'calle 10', 2, 900000.00, '2024-03-31 19:01:15', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -126,10 +126,10 @@ CREATE TABLE `instrumentos` (
 --
 
 INSERT INTO `instrumentos` (`id_instrumento`, `nombre`, `marca`, `stock`, `foto`, `tipo`, `color`, `modelo`, `precio`, `fecha_registro`, `estado`) VALUES
-(1, 'Guitarra eléctrica', 'Fender', 5, '', 'Guitarra', 'madera', '2020', '250000.00', '2024-04-08 13:36:12', 'INACTIVO'),
-(2, 'bateria electrica', 'yamaha', 2, '', 'Bateria', 'negra', '2000', '1500000.00', '2024-04-07 17:11:52', 'INACTIVO'),
-(5, 'flauta', 'flausan', 12, 'articlus.jpg', 'Viento', 'madera', '2009', '25000.00', '2024-04-07 06:00:00', 'ACTIVO'),
-(6, 'bateria electrica', 'yamaha', 2, 'fondo_menu.jpg', 'Bateria', 'azul', '2000', '100000.00', '0000-00-00 00:00:00', 'ACTIVO');
+(1, 'Guitarra eléctrica', 'Fender', 5, '', 'Guitarra', 'madera', '2020', 250000.00, '2024-04-08 13:36:12', 'INACTIVO'),
+(2, 'bateria electrica', 'yamaha', 2, '', 'Bateria', 'negra', '2000', 1500000.00, '2024-04-07 17:11:52', 'INACTIVO'),
+(5, 'flauta', 'flausan', 12, 'articlus.jpg', 'Viento', 'madera', '2009', 25000.00, '2024-04-07 06:00:00', 'ACTIVO'),
+(6, 'bateria electrica', 'yamaha', 2, 'fondo_menu.jpg', 'Bateria', 'azul', '2000', 100000.00, '0000-00-00 00:00:00', 'ACTIVO');
 
 -- --------------------------------------------------------
 
@@ -181,7 +181,7 @@ CREATE TABLE `usuarios` (
   `id_usuario` int(11) NOT NULL,
   `cedula` bigint(20) NOT NULL,
   `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
+  `contrasena` varchar(255) NOT NULL,
   `tipo` enum('ADMIN','VENDEDOR') NOT NULL,
   `estado` enum('ACTIVO','INACTIVO') NOT NULL DEFAULT 'ACTIVO'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
@@ -190,7 +190,7 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `cedula`, `email`, `password`, `tipo`, `estado`) VALUES
+INSERT INTO `usuarios` (`id_usuario`, `cedula`, `email`, `contrasena`, `tipo`, `estado`) VALUES
 (3, 1004, 'Juana@mail.com', '123', 'ADMIN', 'ACTIVO'),
 (4, 10047, 'esteban@mail.com', '123', 'VENDEDOR', 'INACTIVO'),
 (5, 10785, 'marin@mail.com', '123', 'VENDEDOR', 'ACTIVO');
